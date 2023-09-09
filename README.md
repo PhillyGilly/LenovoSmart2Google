@@ -21,7 +21,8 @@ Paul Bottein @piitaya publishes regular videos on Youtube and this one https://y
 
 My yaml for this dashboard (not including actions and sub-menus) is:
 
-```views:
+```
+views:
   - title: Bed2
     icon: mdi:bed-double-outline
     badges: []
@@ -75,11 +76,13 @@ My yaml for this dashboard (not including actions and sub-menus) is:
             entity: fan.vallox
             layout: vertical
             name: MVHR
-title: Clock```
+title: Clock
+```
 
 The most important feature of Wallpanel (IMHO) is the ability to automate dimming of the display and here is my automation.
-
-```alias: "57. Dim Bedside Clock Wallpanel "
+(note I have revised this - update).
+```
+alias: "57. Dim Bedside Clock Wallpanel "
 description: ""
 trigger:
   - type: illuminance
@@ -152,7 +155,8 @@ action:
               retain: false
               topic: wallpanel/mywallpanel/command
               payload: "{'brightness':60}"
-mode: single```
+mode: single
+```
 
 
 When you have everything in Wallpanel/HA running to your satisfation, you can set Wallpanel as the boot App 
