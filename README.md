@@ -11,11 +11,15 @@ This is my Lenovo on my bedside table and below I will try to explain how I got 
 ![2023-09-09 07 30 14](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/f8ce972c-8bd8-4b7c-b9d4-4e2babac02c1)
 
 
+You need to set up the Wallpanel app to use MQTT and to be discoverable. When HA has found it you will see a new device with properites that will be useful later.
+Here is my clock device in HA.
+picture---
+
 The Wallpanel app can display any URL so obviously any Home Assistant dashboard but taking into account the dimensions of the display it is probably best to use a "compact" xxxx and I used the Mushroom theme with five aaa across the screen and two rows.
 
-Paul Bottein @piitaya publishes regular videos on Youtube and this one https://youtu.be/gouMnPxYHDc?si=mbHS4UbbNmC-IDrC explains everything you need to know about setting up this display.
+Paul Bottein @piitaya publishes regular videos on Youtube and this one https://youtu.be/gouMnPxYHDc?si=mbHS4UbbNmC-IDrC explains everything you need to know about setting up and using the mushroom theme.
 
-My yaml for this dashboard is:
+My yaml for this dashboard (not including actions and sub-menus) is:
 
 ```views:
   - title: Bed2
@@ -73,7 +77,7 @@ My yaml for this dashboard is:
             name: MVHR
 title: Clock```
 
-
+The most important feature of Wallpanel (IMHO) is the ability to automate dimming of the display and here is my automation.
 
 ```alias: "57. Dim Bedside Clock Wallpanel "
 description: ""
@@ -149,3 +153,6 @@ action:
               topic: wallpanel/mywallpanel/command
               payload: "{'brightness':60}"
 mode: single```
+
+
+When you have everything in Wallpanel/HA running to your satisfation, you can set Wallpanel as the boot App 
