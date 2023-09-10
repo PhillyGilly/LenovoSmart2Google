@@ -11,8 +11,9 @@ This is my Lenovo on my bedside table and below I will try to explain how I got 
 ![2023-09-09 07 30 14](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/f8ce972c-8bd8-4b7c-b9d4-4e2babac02c1)
 
 Documentation for the Wallpanel App is here https://wallpanel.xyz/docs/getting-started and you need to set it up to use MQTT and to be discoverable. When HA has found it you will see a new device with properites that will be useful later.
-Here is my clock device in HA.
-picture---
+Here is "my_wall_panel" device in HA.
+![image](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/7d687555-88b4-4021-8156-f8a5069488ed)
+
 
 The Wallpanel app can display any URL so obviously any Home Assistant dashboard but taking into account the dimensions of the display it is probably best to use a "compact" xxxx and I used the Mushroom theme with five aaa across the screen and two rows.
 
@@ -84,34 +85,25 @@ The most important feature of Wallpanel (IMHO) is the ability to automate dimmin
 alias: "57. Dim Bedside Clock Wallpanel "
 description: ""
 trigger:
-  - type: illuminance
-    platform: device
-    device_id: 7ec34a498e995c51bb776b47b9f9270c
-    entity_id: 1cf4bee26bf414d073d4c6bcf2df6ff9
-    domain: sensor
-    below: 50
+  - platform: numeric_state
+    entity_id: sensor.my_wall_panel_light
+    below: 25
     for:
       hours: 0
       minutes: 0
       seconds: 30
     id: night
-  - type: illuminance
-    platform: device
-    device_id: 7ec34a498e995c51bb776b47b9f9270c
-    entity_id: 1cf4bee26bf414d073d4c6bcf2df6ff9
-    domain: sensor
-    above: 50
+  - platform: numeric_state
+    entity_id: sensor.my_wall_panel_light
+    above: 25
     below: 500
     for:
       hours: 0
       minutes: 0
       seconds: 30
     id: dull
-  - type: illuminance
-    platform: device
-    device_id: 7ec34a498e995c51bb776b47b9f9270c
-    entity_id: 1cf4bee26bf414d073d4c6bcf2df6ff9
-    domain: sensor
+  - platform: numeric_state
+    entity_id: sensor.my_wall_panel_light
     above: 500
     for:
       hours: 0
@@ -123,8 +115,7 @@ action:
   - choose:
       - conditions:
           - condition: trigger
-            id:
-              - night
+            id: night
         sequence:
           - service: mqtt.publish
             data:
@@ -134,8 +125,7 @@ action:
               payload: "{'brightness':10}"
       - conditions:
           - condition: trigger
-            id:
-              - dull
+            id: dull
         sequence:
           - service: mqtt.publish
             data:
@@ -145,8 +135,7 @@ action:
               payload: "{'brightness':35}"
       - conditions:
           - condition: trigger
-            id:
-              - bright
+            id: bright
         sequence:
           - service: mqtt.publish
             data:
