@@ -10,7 +10,6 @@ After this he skips over the details of how to make the clock actually display H
 This is my Lenovo on my bedside table and below I will try to explain how I got from where Cameron leaves off ant minute 29 to here:
 ![2023-09-09 07 30 14](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/f8ce972c-8bd8-4b7c-b9d4-4e2babac02c1)
 
-
 Documentation for the Wallpanel App is here https://wallpanel.xyz/docs/getting-started and you need to set it up to use MQTT and to be discoverable. When HA has found it you will see a new device with properites that will be useful later.
 Here is my clock device in HA.
 picture---
