@@ -86,6 +86,20 @@ title: Clock
 
 The most important feature of Wallpanel (IMHO) is the ability to automate dimming of the display and here is my automation.
 (note I have revised this - update).
+You need to create an mqtt sensor for Levono Clock Brightness in mqtt.yaml
+```
+#################################################################
+# for Clock                                                     #
+#################################################################
+sensor:
+  - name: Levono Clock Brightness
+    unique_id: levonoclockbrightness
+    state_topic: "levono/clock/state"
+    value_template: "{{value_json.brightness}}"
+    icon: "mdi:lightbulb"
+```
+Then you need to create an automation to match the brightness of the display with the ambient light conditions.
+You may need to adjust the thresholds depending on your taste.
 ```
 alias: "57. Dim Bedside Clock Wallpanel "
 description: ""
