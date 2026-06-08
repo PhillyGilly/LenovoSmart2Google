@@ -14,6 +14,7 @@ The first thing is that Wallpanel is quite difficult to find and load. The way i
 
 Here is "my_wall_panel" device in HA.
 ![image](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/7d687555-88b4-4021-8156-f8a5069488ed)
+<img width="835" height="442" alt="image" src="https://github.com/user-attachments/assets/36741ef4-96fa-4392-b6d4-3b331093a9be" />
 
 
 The Wallpanel app can display any URL so obviously any Home Assistant dashboard but taking into account the dimensions of the display it is probably best to use a "compact" xxxx and I used the Mushroom theme with five aaa across the screen and two rows.
