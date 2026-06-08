@@ -1,7 +1,6 @@
-# LenovoSmart2Google
-
-How to get Home Assistant on the Lenovo Smart Clock 2 - What Cameron doesn't tell you
+# How to get Home Assistant on the Lenovo Smart Clock 2 - What Cameron doesn't tell you
 ![image](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/2236ede7-44ed-41d8-9d9c-1258f030f9b4)
+
 Gameron Gray @camerongray1515 has published a brilliant video on Youtube on how to customise the Lenovo Smart Clock. Thank you!
 This gives a comprehensive tutorial which is easy to follow right up to the point where he adds the Wallpanel kiosk software at about 29:30.
 https://youtu.be/uSHpvbbvz7Q?si=PDhgQF8J-3IWhbml&t=1779
