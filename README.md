@@ -60,7 +60,7 @@ views:
       - type: horizontal-stack
         cards:
           - type: custom:mushroom-entity-card
-            entity: sensor.givtcp_dw2224g041_battery_soc
+            entity: sensor.givtcp_********_battery_soc
             layout: vertical
             name: SOC
             icon_color: deep-orange
@@ -73,7 +73,7 @@ views:
             layout: vertical
             name: F'cast
           - type: custom:mushroom-entity-card
-            entity: sensor.givtcp_ed2248g390_pv_power
+            entity: sensor.givtcp_ed********_pv_power
             layout: vertical
             icon: mdi:solar-power-variant-outline
             name: PV
