@@ -15,11 +15,12 @@ The first thing is that Wallpanel is quite difficult to find and load. The way i
 ****Don't forget that you must set up a unique mqtt user name and password in Home Assistant Mosquito for the Wallpanel App. I used "clock-user" and clock-pass".**** When HA has found it you will see a new device with properites that will be useful later.
 
 Here is "my_wall_panel" device in HA.
-![image](https://github.com/PhillyGilly/LenovoSmart2Google/assets/56273663/7d687555-88b4-4021-8156-f8a5069488ed)
 <img width="835" height="442" alt="image" src="https://github.com/user-attachments/assets/36741ef4-96fa-4392-b6d4-3b331093a9be" />
 
 
-The Wallpanel app can display any URL so obviously any Home Assistant dashboard but taking into account the dimensions of the display it is probably best to use a "compact" xxxx and I used the Mushroom theme with five aaa across the screen and two rows.
+The Wallpanel app can display any URL so obviously any Home Assistant dashboard but taking into account the dimensions of the display it is probably best to use a "compact" layout I used the Mushroom theme with two horizontal stack cards each containing five mushroom cards. I also created my clock page as a dashboard from Settings-Dashboard +Add dashboard like so
+<img width="462" height="390" alt="image" src="https://github.com/user-attachments/assets/dc4bfdaf-ee54-4c69-bae6-74d11e925731" />
+
 
 Paul Bottein @piitaya publishes regular videos on Youtube and this one https://youtu.be/gouMnPxYHDc?si=mbHS4UbbNmC-IDrC explains everything you need to know about setting up and using the mushroom theme.
 
@@ -125,7 +126,7 @@ action:
             data:
               qos: "1"
               retain: true
-              topic: wallpanel/mywallpanel/command
+              topic: levono/clock/command
               payload: "{'brightness':10}"
       - conditions:
           - condition: trigger
@@ -135,7 +136,7 @@ action:
             data:
               qos: "1"
               retain: false
-              topic: wallpanel/mywallpanel/command
+              topic: levono/clock/command
               payload: "{'brightness':35}"
       - conditions:
           - condition: trigger
@@ -145,7 +146,7 @@ action:
             data:
               qos: "1"
               retain: false
-              topic: wallpanel/mywallpanel/command
+              topic: levono/clock/command
               payload: "{'brightness':60}"
 mode: single
 ```
